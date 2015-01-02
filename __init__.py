@@ -7,5 +7,6 @@ from .sale import *
 def register():
     Pool.register(
         SaleLine,
+        Purchase,
         PurchaseLine,
         module='sale_opportunity_purchase_relation_margin', type_='model')
