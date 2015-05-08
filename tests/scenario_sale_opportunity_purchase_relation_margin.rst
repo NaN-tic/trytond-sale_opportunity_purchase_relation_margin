@@ -218,7 +218,7 @@ Create a purchase to fill the sale and relate them::
     >>> purchase.click('quote')
     >>> sale_line.reload()
     >>> sale_line.cost_price
-    Decimal('6.0')
+    Decimal('6.0000')
     >>> sale_line.margin
     Decimal('40.00')
     >>> sale.reload()
@@ -231,7 +231,7 @@ Modify purchase line and check that the cost_price is updated::
     >>> purchase_line.save()
     >>> sale_line.reload()
     >>> sale_line.cost_price
-    Decimal('6.5')
+    Decimal('6.5000')
     >>> sale_line.margin
     Decimal('35.00')
     >>> sale.reload()
