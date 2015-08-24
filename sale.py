@@ -58,7 +58,9 @@ class SaleLine:
                 quantity += purchase_line.quantity
         if quantity:
             return (cost_price / Decimal(str(quantity))).quantize(_QUANTIZE)
-        return self.product.cost_price
+        if self.product:
+            return self.product.cost_price
+        return cost_price
 
 
 class Purchase:
