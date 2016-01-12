@@ -2,14 +2,13 @@
 # copyright notices and license terms.
 from decimal import Decimal
 
-from trytond.config import config
 from trytond.pool import Pool, PoolMeta
-DIGITS = int(config.get('digits', 'unit_price_digits', 4))
+from trytond.modules.product import price_digits
 
 __all__ = ['SaleLine', 'Purchase', 'PurchaseLine']
 __metaclass__ = PoolMeta
 
-_QUANTIZE = Decimal(str(10 ** -DIGITS))
+_QUANTIZE = Decimal(str(10 ** -price_digits[1]))
 _CONFIRMED_STATES = ('confirmed', 'processing', 'done')
 
 
