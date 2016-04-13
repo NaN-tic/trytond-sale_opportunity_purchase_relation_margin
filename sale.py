@@ -6,7 +6,6 @@ from trytond.pool import Pool, PoolMeta
 from trytond.modules.product import price_digits
 
 __all__ = ['SaleLine', 'Purchase', 'PurchaseLine']
-__metaclass__ = PoolMeta
 
 _QUANTIZE = Decimal(str(10 ** -price_digits[1]))
 _CONFIRMED_STATES = ('confirmed', 'processing', 'done')
@@ -14,6 +13,7 @@ _CONFIRMED_STATES = ('confirmed', 'processing', 'done')
 
 class SaleLine:
     __name__ = 'sale.line'
+    __metaclass__ = PoolMeta
 
     @classmethod
     def update_cost_price(cls, lines):
@@ -64,6 +64,7 @@ class SaleLine:
 
 class Purchase:
     __name__ = 'purchase.purchase'
+    __metaclass__ = PoolMeta
 
     @classmethod
     def cancel(cls, purchases):
@@ -86,6 +87,7 @@ class Purchase:
 
 class PurchaseLine:
     __name__ = 'purchase.line'
+    __metaclass__ = PoolMeta
 
     @classmethod
     def create(cls, vlist):
